@@ -51,7 +51,7 @@ export function ProductCards(props){
     const {pic, title, originalPrice, discount, currentPrice} = props;
     return(
         <div className="ProductCards">
-            <figure onClick={()=>setHov(!hov)} className="ProductCardsFigure">
+            <figure onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)} className="ProductCardsFigure">
                 <img src={pic} alt="product" />
                 <div className={hov ? "ProductCardsHover Hover" : "ProductCardsHover"}>
                     <div className="CartIconHolder">

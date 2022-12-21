@@ -269,6 +269,7 @@
     justify-content: space-between;
     cursor: pointer;
     padding: 5%;
+    transition: all ease 0.3s;
 }
 .HorizontalNewsCard:hover{
     background-color: #40bfff27;
@@ -328,4 +329,7 @@
     line-height: 30px;
     color: #FF4858;
     margin-right: 10px;
-    }
+}
+.HorizontalProductCard:hover{
+    transform: scale(1.1);
+}
