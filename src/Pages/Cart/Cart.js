@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { ContextData } from "../../Context/Context";
 import "./Cart.css";
 function Cart(){
-    const {delteCartItem, descreaseQuantity, increseQuantity, cart, priceAfterDiscount} = useContext(ContextData);
+    const {checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, cart, priceAfterDiscount} = useContext(ContextData);
+    
     return(
         <div className="CartPage">
             <div className="CartProducts">
@@ -34,6 +35,30 @@ function Cart(){
                         }
                     </tbody>
                 </table>
+            </div>
+            <div className="TotalSection">
+                <div className="VoucherSide">
+                    <input type="text" placeholder="Voucher code"/>
+                    <button>Redeem</button>
+                </div>
+                <div className="CalculateTotalCart">
+                    <div>
+                        <p>Subtotal</p>
+                        <p>${calcTotal()}</p>
+                    </div>
+                    <div>
+                        <p>Shipping fee</p>
+                        <p>${calcShipping()}</p>
+                    </div>
+                    <div>
+                        <p>Coupon</p>
+                        <p>No</p>
+                    </div>
+                    <div>
+                        <p>${checkout()}</p>
+                    </div>
+                    <button>Check Out</button>
+                </div>
             </div>
         </div>
     )

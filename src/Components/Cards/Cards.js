@@ -1,6 +1,8 @@
 import "./Cards.css";
 import CartIcon from "../../utils/icons/CartIcon.svg";
 import LikeIcon from "../../utils/icons/HeartIcon.svg";
+import CartIconRed from "../../utils/icons/CartIconRed.svg";
+
 import { useState } from "react";
 import { useContext } from "react";
 import { ContextData } from "../../Context/Context";
@@ -58,8 +60,8 @@ export function ProductCards(props){
                 <img src={pic} alt="product" />
                 <div className={hov ? "ProductCardsHover Hover" : "ProductCardsHover"}>
                     <div className="CartIconHolder">
-                        <figure onClick={()=>addCart(product)}>
-                            <img src={CartIcon} alt="CartIcon" />
+                        <figure onClick={()=>product.InCart ? alert("You have already added this item to the cart") : addCart(product)}>
+                            <img src={product.InCart ? CartIconRed : CartIcon} alt="CartIcon" />
                         </figure>
                     </div>
                     <div className="LikeIconHolder">

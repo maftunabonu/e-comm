@@ -84,8 +84,6 @@ function Home(){
         {picture: FeaturedShoe, title: "Blue Swade Nike Sneakers", originalPrice: 599, newPrice: 499},
     ])
 
-
-    
         
     function changeModule(name){
         setModule(name);
