@@ -3,24 +3,10 @@ import { PromotionCardONe, PromotionCardTwo, PromotionCardThree, ProductCards, I
 import CrossBag from "../../utils/images/CrossBag.svg";
 import Max270 from "../../utils/images/Max270.svg";
 import NikeAir from "../../utils/images/NikeAir.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./Home.css";
 
-import ColorfulSneakers from "../../utils/images/ColorfulSneakers.svg";
-import RedBag from "../../utils/images/RedBag.svg";
-import BlackBelt from "../../utils/images/BlackBelt.jpg";
-import BlueGlasses from "../../utils/images/BlueGlasses.jpeg";
-import BlueSneakers from "../../utils/images/BlueSneakers.svg";
-import BlueSoleSneakers from "../../utils/images/BlueSoleSneakers.svg";
-import BrownBelt from "../../utils/images/BrownBelt.jpg";
-import GreenBelt from "../../utils/images/GreenBelt.jpg";
-import GreenGlasses from "../../utils/images/GreenGlasses.jpeg";
-import JapaneseBelt from "../../utils/images/JapaneseBelt.jpg";
-import MilkyBag from "../../utils/images/MilkyBag.svg";
-import OrageGlasses from "../../utils/images/OrageGlasses.jpg";
-import PairSneakers from "../../utils/images/PairSneakers.svg";
-import RoundGlasses from "../../utils/images/RoundGlasses.jpg";
-import YellowSneakers from "../../utils/images/YellowSneakers.svg";
+
 import AdvertisementSection from "../../AdvertisementSection/AdvertisementSection";
 import FreeShipping from "../../utils/icons/FreeShipping.svg";
 import Refund from "../../utils/icons/Refund.svg";
@@ -29,7 +15,9 @@ import NikeLogo from "../../utils/icons/NikeLogo.svg";
 import FigmaLogo from "../../utils/icons/FigmaLogo.svg";
 import KronosLogo from "../../utils/icons/KronosLogo.svg";
 import FeaturedShoe from "../../utils/images/FeaturedShoe.svg";
+import { ContextData } from "../../Context/Context";
 function Home(){
+    const {priceAfterDiscount, products} = useContext(ContextData);
     const [module,setModule] = useState("All");
     const [allowed, setAllowed] = useState(8);
     const [promotioProducts] = useState([
@@ -37,45 +25,7 @@ function Home(){
         {id: 2, picture: Max270, title: "FS - Nike Air Max 270 React...", originalPrice: 534.33, discount: 24},
         {id: 3, picture: NikeAir, title: "FS - Nike Air Max 270 React...", originalPrice: 534.33, discount: 24},
     ])
-    const [products] = useState([
-        {category: "Sneakers", picture: ColorfulSneakers, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sneakers", picture: ColorfulSneakers, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Bags", picture: RedBag, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sneakers", picture: BlueSneakers, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sneakers", picture: BlueSoleSneakers, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sneakers", picture: YellowSneakers, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sneakers", picture: PairSneakers, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sneakers", picture: BlueSneakers, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Belt", picture: BlackBelt, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sunglasses", picture: BlueGlasses, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Belt", picture: BrownBelt, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Belt", picture: GreenBelt, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Bags", picture: MilkyBag, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Bags", picture: MilkyBag, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Bags", picture: MilkyBag, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Belt", picture: JapaneseBelt, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sunglasses", picture: OrageGlasses, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Bags", picture: CrossBag, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Bags", picture: MilkyBag, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Bags", picture: MilkyBag, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sunglasses", picture: RoundGlasses, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sunglasses", picture: GreenGlasses, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Bags", picture: RedBag, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sunglasses", picture: RoundGlasses, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sunglasses", picture: GreenGlasses, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sunglasses", picture: RoundGlasses, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sunglasses", picture: GreenGlasses, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sunglasses", picture: RoundGlasses, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sunglasses", picture: GreenGlasses, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Belt", picture: JapaneseBelt, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Belt", picture: JapaneseBelt, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Belt", picture: JapaneseBelt, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Belt", picture: JapaneseBelt, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Belt", picture: JapaneseBelt, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Belt", picture: JapaneseBelt, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sneakers", picture: ColorfulSneakers, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24},
-        {category: "Sneakers", picture: ColorfulSneakers, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24}
-    ])
+    
     const [count, setCount] = useState(products.length);
     const [productLength] = useState(
         {
@@ -135,9 +85,7 @@ function Home(){
     ])
 
 
-    function priceAfterDiscount(dis, cur){
-        return cur - (cur*dis/100);
-    }
+    
         
     function changeModule(name){
         setModule(name);
@@ -203,7 +151,7 @@ function Home(){
                         })
                         .map((item, index)=> index<allowed ? (
                             <div key={index} className="ProductsCardHolder">
-                                <ProductCards pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
+                                <ProductCards product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
                             </div>
                             ) : <></>
                             

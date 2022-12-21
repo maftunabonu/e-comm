@@ -112,6 +112,9 @@
     letter-spacing: 0.5px;
     color: #FFFFFF;
 }
+.CartNumber.None{
+    display: none;
+}
 .Item{
     width: 20%;
 }

@@ -26,3 +26,6 @@
     flex-direction: column;
     justify-content: center;
 }
+::-webkit-scrollbar {
+    width: 0px;
+  }

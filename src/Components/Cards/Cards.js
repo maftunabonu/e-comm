@@ -2,6 +2,8 @@ import "./Cards.css";
 import CartIcon from "../../utils/icons/CartIcon.svg";
 import LikeIcon from "../../utils/icons/HeartIcon.svg";
 import { useState } from "react";
+import { useContext } from "react";
+import { ContextData } from "../../Context/Context";
 
 export function PromotionCardONe(props){
     const {pic, title, originalPrice, discount, currentPrice} = props;
@@ -47,15 +49,16 @@ export function PromotionCardThree(props){
     )
 } 
 export function ProductCards(props){
+    const {addCart} = useContext(ContextData);
     const [hov, setHov] = useState(false);
-    const {pic, title, originalPrice, discount, currentPrice} = props;
+    const {product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
         <div className="ProductCards">
             <figure onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)} className="ProductCardsFigure">
                 <img src={pic} alt="product" />
                 <div className={hov ? "ProductCardsHover Hover" : "ProductCardsHover"}>
                     <div className="CartIconHolder">
-                        <figure>
+                        <figure onClick={()=>addCart(product)}>
                             <img src={CartIcon} alt="CartIcon" />
                         </figure>
                     </div>

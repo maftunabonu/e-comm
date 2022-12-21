@@ -1,0 +1,140 @@
+.CartPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.CartProducts{
+    width: 100%;
+    height: 480px;
+    overflow: auto;
+    position: relative;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+thead{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    border-collapse: collapse;
+}
+thead, tbody{
+    width: 100%;
+    height: 150px;
+}
+tbody>tr{
+    border-bottom: #F6F7F8 2px solid;
+}
+thead>tr>:nth-child(1){
+    text-align: start;
+    padding-left: 12%; 
+}
+thead>tr>:nth-child(1), thead>tr>:nth-child(1){
+    width: 50%;
+}
+thead>tr>:nth-child(2), thead>tr>:nth-child(2){
+    text-align: start;
+    width: 10%;
+}
+thead>tr>:nth-child(3), thead>tr>:nth-child(3){
+    text-align: start;
+    width: 15%;
+}
+thead>tr>:nth-child(4), thead>tr>:nth-child(4){
+    text-align: start;
+    width: 15%;
+}
+thead>tr>th{
+    font-size: 20px;
+    line-height: 30px;
+    color: #22262A;
+}
+.CartProductFistPart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5% 10%;
+}
+.CartProductFistPart>button{
+    width: 27px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ff687525;
+    text-align: center;
+    color: #FF4252;
+    border: none;
+    cursor: pointer;
+}
+.CartProductFistPart>figure{
+    width: 137.85px;
+    height: 94px;
+    margin: 0 10%;
+}
+.CartProductFistPart>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.CartProductTotal{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #262626;
+}
+.CartProductQuantity{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.CartProductQuantityDiv{
+    width: 125px;
+    height: 46px;
+    display: flex;
+    flex-direction: row;
+    background: #F6F7F8;
+}
+.CartProductQuantityDiv>button{
+    width: 33.3%;
+    height: 100%;
+    color: #33A0FF;
+    text-align: center;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: transparent;
+}
+.CartProductQuantityDiv>div{
+    width: 33.3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.CartProductQuantityDiv>div>p{
+    font-family: Proxima;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #262626;
+}
+.CartProducts::-webkit-scrollbar {
+    width: 20px;
+}
+.CartProducts::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.CartProducts::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box; 
+  }
+.CartProducts::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+    width: 25px;
+  }

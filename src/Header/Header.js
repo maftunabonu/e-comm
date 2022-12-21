@@ -19,7 +19,7 @@ import SearchIcon from "../utils/icons/SearchIcon.svg";
 import Logo from "../utils/images/Logo.svg";
 
 function Header(){
-    const {open, toggle} = useContext(ContextData);
+    const {Clength, open, toggle} = useContext(ContextData);
    
     const [accordions] = useState(
       [
@@ -55,11 +55,11 @@ function Header(){
                             <figure className="CartImage">
                                 <img src={CartIcon} alt="cart" />
                             </figure>
-                            <div className="CartNumber">
+                            <div className={Clength ? "CartNumber" : "CartNumber None"}>
                                 <figure>
                                     <img src={Ellipse} alt="ellipse" />
                                 </figure>
-                                <p>3</p>
+                                <p>{Clength}</p>
                             </div>
                         </div>
                     </NavLink>
