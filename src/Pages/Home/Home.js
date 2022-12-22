@@ -25,7 +25,7 @@ function Home(){
         {id: 2, picture: Max270, title: "FS - Nike Air Max 270 React...", originalPrice: 534.33, discount: 24},
         {id: 3, picture: NikeAir, title: "FS - Nike Air Max 270 React...", originalPrice: 534.33, discount: 24},
     ])
-    
+    const [loading, setLoading] = useState(false);
     const [count, setCount] = useState(products.length);
     const [productLength] = useState(
         {
@@ -86,6 +86,8 @@ function Home(){
 
         
     function changeModule(name){
+        setLoading(true);
+        
         setModule(name);
         if(name === "All"){
             setCount(productLength.allLength);
@@ -102,6 +104,9 @@ function Home(){
             setCount(productLength.sunglassesLength);
         }
         clearchangeAllowed();
+        setTimeout(() => {
+            setLoading(false);
+          }, 10);
     }
     function clearchangeAllowed(){
         setAllowed(8);
@@ -139,7 +144,12 @@ function Home(){
                     <div onClick={()=>changeModule("Sunglasses")} className={module === "Sunglasses"  ? "module active" : "module"}><p>Sunglasses</p></div>
                 </div>
                 <div className="HomePageSection2ProductCards">
-                    {
+                    { 
+                    loading  ? 
+                        <div className="HomePageSection2ProductCardsLoading">
+                            <p>Loading...</p>
+                        </div>
+                     :
                         products.filter((elem)=>{
                             if(elem.category === module){
                                 return elem;

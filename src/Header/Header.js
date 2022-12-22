@@ -19,7 +19,7 @@ import SearchIcon from "../utils/icons/SearchIcon.svg";
 import Logo from "../utils/images/Logo.svg";
 
 function Header(){
-    const {Clength, open, toggle} = useContext(ContextData);
+    const {checkout, Clength, open, toggle} = useContext(ContextData);
    
     const [accordions] = useState(
       [
@@ -69,7 +69,7 @@ function Header(){
                         </div>
                     </NavLink>
                     <div className="Total">
-                        <p>$0.00</p>
+                        <p>${checkout()>1000 ? Math.floor(checkout()/1000) + "k" :  checkout()}</p>
                     </div>
                     <NavLink className="NavLink" to="/search">
                     <div className="Search">

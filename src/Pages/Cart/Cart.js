@@ -17,7 +17,10 @@ function Cart(){
                         </tr>
                     </thead>
                     <tbody>
-                        {
+                        { cart.length === 0 ? 
+                            <tr className="NoItemRow">
+                                <td colSpan={4}>NO ITEM IN THE CART</td>
+                            </tr> :
                             cart.map((item, index)=>(
                                 <tr key={index}>
                                     <td className="CartProductFistPart"><button onClick={()=>delteCartItem(item)}>X</button> <figure><img src={item.picture} alt="product" /></figure> <p>{item.title}</p></td>
@@ -32,6 +35,7 @@ function Cart(){
                                     <td>${priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}</td>
                                 </tr>
                             ))
+                                
                         }
                     </tbody>
                 </table>
@@ -54,10 +58,11 @@ function Cart(){
                         <p>Coupon</p>
                         <p>No</p>
                     </div>
-                    <div>
+                    <div className="FinalTotal">
+                        <p>TOTAL</p>
                         <p>${checkout()}</p>
                     </div>
-                    <button>Check Out</button>
+                    <button className="CheckoutBtn">Check Out</button>
                 </div>
             </div>
         </div>

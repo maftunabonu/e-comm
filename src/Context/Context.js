@@ -91,7 +91,7 @@ function ContextProvider({children}) {
     function delteCartItem(i){
       setCart(cart.filter((elem)=>(elem.id !== i.id)));
       setClength(cart.length-1); 
-      setProducts(products.map((item)=>item.id === i.id ? {...i, InCart: true} : item)); 
+      setProducts(products.map((item)=>item.id === i.id ? {...i, InCart: false} : item)); 
     }
     const calcTotal=()=>{
       let totalNumber = 0;

@@ -177,3 +177,16 @@
 .NewsCardHolder, .FeaturedProductsCardHolder{
     width: 33%;
 }
+.HomePageSection2ProductCardsLoading{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 270px;
+}
+.HomePageSection2ProductCardsLoading>p{
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 51px;
+    color: #22262A;
+}

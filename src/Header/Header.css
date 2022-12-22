@@ -43,7 +43,7 @@
     text-decoration: none;
 }
 .profileRight{
-    width: 30%;
+    width: 40%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -125,7 +125,10 @@
     color: #262626;
 }
 .Total{
-    width: 10%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .Total>p{
     font-weight: 400;
