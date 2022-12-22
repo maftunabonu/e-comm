@@ -58,7 +58,7 @@ export function ProductCards(props){
         <div className="ProductCards">
             <figure onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)} className="ProductCardsFigure">
                 <img src={pic} alt="product" />
-                <div className={hov ? "ProductCardsHover Hover" : "ProductCardsHover"}>
+                <div className="ProductCardsHover">
                     <div className={product.InCart ? "CartIconHolder Red" : "CartIconHolder"}>
                         <figure onClick={()=>product.InCart ? alert("You have already added this item to the cart") : addCart(product)}>
                             <img src={product.InCart ? CartIconRed : CartIcon} alt="CartIcon" />

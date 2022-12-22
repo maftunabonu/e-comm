@@ -71,7 +71,6 @@ function ContextProvider({children}) {
     function addCart(i) {
       setProducts(products.map((item)=>item.id === i.id ? {...i, InCart: true} : item));
       setCart([...cart, {...i, quantityInCart: 1}]);
- 
       setClength(cart.length+1);
     }
     
