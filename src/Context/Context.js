@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ColorfulSneakers from "../utils/images/ColorfulSneakers.svg";
 import RedBag from "../utils/images/RedBag.svg";
 import BlackBelt from "../utils/images/BlackBelt.jpg";
@@ -60,14 +60,21 @@ function ContextProvider({children}) {
       {id: 35, category: "Sneakers", picture: ColorfulSneakers, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24, InCart: false, shippingFee: 5},
       {id: 36, category: "Sneakers", picture: ColorfulSneakers, title: "Nike Air Max 270 React", originalPrice: 534.33, discount: 24, InCart: false, shippingFee: 5}
   ])
-    const [cart, setCart] = useState([]);
-    const [Clength, setClength] = useState(0)
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem("data")) ? JSON.parse(localStorage.getItem("data")) : []);
+    const [Clength, setClength] = useState(cart.length);
 
+      useEffect(() => {
+        localStorage.setItem("data", JSON.stringify(cart));
+      }, [cart]);
+      
+    
     function addCart(i) {
       setProducts(products.map((item)=>item.id === i.id ? {...i, InCart: true} : item));
       setCart([...cart, {...i, quantityInCart: 1}]);
-      setClength(cart.length+1);   
+ 
+      setClength(cart.length+1);
     }
+    
 
     function toggle(i){
         if(open === i){

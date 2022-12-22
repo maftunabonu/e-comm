@@ -115,10 +115,10 @@
 .CartNumber.None{
     display: none;
 }
-.Item{
+.Favorites{
     width: 20%;
 }
-.Item>p{
+.Favorites>p{
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
@@ -165,7 +165,7 @@
     width: 100%;
 }
 .pages{
-    width: 60%;
+    width: 40%;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -174,7 +174,7 @@
 }
 .NavLink.list{
     font-weight: 500;
-    font-size: 18px;
+    font-size: 25px;
     line-height: 27px;
     color: #22262A;
 }

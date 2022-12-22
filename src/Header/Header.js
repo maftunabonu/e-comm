@@ -7,9 +7,7 @@ import Profile from "../Pages/Profile/Profile";
 import Cart from "../Pages/Cart/Cart";
 import Products from "../Pages/Products/Products";
 import Home from "../Pages/Home/Home";
-import Bags from "../Pages/Bags/Bags";
-import Sneakers from "../Pages/Sneakers/Sneakers";
-import Belt from "../Pages/Belt/Belt";
+import Favorites from "../Pages/Favorites/Favorites";
 import Contact from "../Pages/Contact/Contact";
 import Search from "../Pages/Search/Search";
 import ProfilePicture from "../utils/icons/ProfilePicture.svg";
@@ -63,9 +61,9 @@ function Header(){
                             </div>
                         </div>
                     </NavLink>
-                    <NavLink className="NavLink" to="/products">
-                        <div className="Item">
-                            <p>Items</p>
+                    <NavLink className="NavLink" to="/favorites">
+                        <div className="Favorites">
+                            <p>Favorites</p>
                         </div>
                     </NavLink>
                     <div className="Total">
@@ -90,13 +88,7 @@ function Header(){
                             <NavLink className="NavLink list first" to="/">HOME</NavLink>
                         </li>
                         <li>
-                            <NavLink className="NavLink list" to="/bags">BAGS</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="NavLink list" to="/sneakers">SNEAKERS</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="NavLink list" to="/belt">BELT</NavLink>
+                            <NavLink className="NavLink list" to="/products">PRODUCTS</NavLink>
                         </li>
                         <li>
                             <NavLink className="NavLink list" to="/contact">CONTACT</NavLink>
@@ -111,9 +103,7 @@ function Header(){
                 <Route path="/cart" element={<Cart/>}/>
                 <Route path="/products" element={<Products/>}/>
                 <Route path="/search" element={<Search/>}/>
-                <Route path="/bags" element={<Bags/>}/>
-                <Route path="/sneakers" element={<Sneakers/>}/>
-                <Route path="/belt" element={<Belt/>}/>
+                <Route path="/favorites" element={<Favorites/>}/>
                 <Route path="/contact" element={<Contact/>}/>
             </Routes>
         </header>
