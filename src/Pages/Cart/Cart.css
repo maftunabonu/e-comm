@@ -123,7 +123,7 @@ thead>tr>th{
     color: #262626;
 }
 .CartProducts::-webkit-scrollbar {
-    width: 20px;
+    width: 30px;
 }
 .CartProducts::-webkit-scrollbar-track {
     background-color: transparent;

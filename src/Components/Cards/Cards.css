@@ -203,7 +203,7 @@
     justify-content: center;
     background: #FFFFFF;
     opacity: 0.95;
-    transition: all .6s ease-in-out;
+    transition: all .5s ease-in-out;
     transform: translateY(-100%);
 }
 .ProductCardsFigure:hover>.ProductCardsHover{
